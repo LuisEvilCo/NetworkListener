@@ -42,8 +42,8 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
                 Log.d(tag, "NETWORK_STATUS_WIFI");
                 WifiManager wm = (WifiManager)context.getSystemService(Context.WIFI_SERVICE);
                 Log.d(tag, "LinkSpeed: " + wm.getConnectionInfo().getLinkSpeed());
-                showNotification(context, "Wifi", "LinkSpeed: " + wm.getConnectionInfo().getLinkSpeed() + " mbps");
-                resultData = "Wifi: " + wm.getConnectionInfo().getLinkSpeed() + " mbps";
+                showNotification(context, "WiFi", "LinkSpeed: " + wm.getConnectionInfo().getLinkSpeed() + " mbps");
+                resultData = "WiFi: " + wm.getConnectionInfo().getLinkSpeed() + " mbps";
                 break;
             }
         }
@@ -54,6 +54,7 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
         context.sendBroadcast(i);
 
     }
+
 
     private void SendData(Context context, String name, String value){
         Intent intent2open = new Intent(context, MainActivity.class);
@@ -73,7 +74,7 @@ public class NetworkChangeReceiver extends BroadcastReceiver {
 
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(context)
-                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setSmallIcon(R.mipmap.ic_message)
                         .setContentTitle(title)
                         .setContentText(content)
                         .setOngoing(true) // this makes a persistent notification

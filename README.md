@@ -1,1 +1,1 @@
-Hello GitHub
+Little demo app that uses a BroadcastReceiver to detect network status change, send a notification ant also a broadcast to the main activity so when the users opens it can see the same info that in the notification.
